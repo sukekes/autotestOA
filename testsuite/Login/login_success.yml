@@ -1,0 +1,42 @@
+# 以下所提的元素名可以是元素id，classname或者其他能定位该元素的属性名称
+project_name: "xxxxx项目"
+
+# 项目主页地址，一般而言登录页面是所有用例的前置用例，base_url为登录url即可
+base_url: "http://oa.simulate.com:8080/systemcenter/theme/newecidi/loginform.html"
+
+case_num: "testsuite_001"
+
+# 一般要求与文件名保持一致
+case_name: "login_success"
+
+# 所属用例集用例根据不同模块或页面分成不同的用例子集，每一个用例对应有一个子集，所有子集合并起来是完整的用例集
+# 使用PO模式进行自动化测试时用例子集名称建议与对应的Page名称保持一致
+testsuite: "Login"
+
+# 简要描述用例对应的功能以及预期结果
+case_description: "用户输入正确的账号、密码后成功登录"
+
+# 前置用例,值为前置用例名称
+pre_case: "pre_case_name"
+
+# 测试步骤，描述操作步骤。使用数组格式便于统计步骤总数
+test_step: 
+-
+  step1: "打开登录页面"
+-
+  step2: "清空用户名后输入正确的用户名"
+-
+  step3: "清空密码后输入对应的用户密码"
+-
+  step4: "点击登录按钮"
+
+# 输入参数，多个参数的话则用数组表示
+input_params:
+-
+  # 名称一般与元素名称保持一致
+  username: "chen_m2"
+-
+  password: "chenm2test"
+
+# value一般为要验证的元素名，定位到页面独有的元素即可代表测试成功，否则失败。
+expect_output: "topmenu"
