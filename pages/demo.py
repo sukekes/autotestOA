@@ -10,27 +10,29 @@ from time import sleep
 
 driver =webdriver.Chrome()
 
-driver.get("http://oa.ecidi.com/systemcenter/theme/newecidi/index.jsp")
+driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp#")
 
 driver.maximize_window()
 
 # driver.implicitly_wait(30)
-
-driver.find_element_by_id("username").send_keys("chen_m2")
-driver.find_element_by_id("username").send_keys(Keys.TAB)
+# driver.find_element_by_id("username").clear()
+#
+# driver.find_element_by_id("username").send_keys("chen_m2")
+# driver.find_element_by_id("username").send_keys(Keys.TAB)
 #driver.implicitly_wait(30)
 
 
 sleep(5)
+driver.find_element_by_id("username").send_keys("chen_l3")
+driver.find_element_by_id("password").send_keys("chenl3test")
 
-#driver.find_element_by_id("password").send_keys("chenm2test")
 
 sleep(10)
 
 # driver.implicitly_wait(30)
 
 
-#driver.find_element_by_id("loginbtn").click()
+driver.find_element_by_id("loginbtn").click()
 
 #driver.quit()
 
