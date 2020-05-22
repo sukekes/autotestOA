@@ -10,7 +10,8 @@ from time import sleep
 from selenium.webdriver.remote.webelement import WebElement
 
 
-driver = webdriver.Chrome()
+# 家里电脑找不到Chromedriver路径，加上路径，Chrome非默认路径安装的问题？？？
+driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
 
 driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp#")
 
@@ -21,8 +22,8 @@ driver.maximize_window()
 #
 # driver.find_element_by_id("username").send_keys("chen_m2")
 # driver.find_element_by_id("username").send_keys(Keys.TAB)
-#driver.implicitly_wait(30)
-a =  driver.find_element_by_id("username")
+# driver.implicitly_wait(30)
+a = driver.find_element_by_id("username")
 
 print(a.id)
 
@@ -34,14 +35,9 @@ print(a.id)
 # driver.find_element_by_id("password").send_keys("chenl3test")
 
 
-
 # driver.implicitly_wait(30)
 
 
 # driver.find_element_by_id("loginbtn").click()
 
 driver.quit()
-
-
-
-
