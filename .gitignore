@@ -204,3 +204,5 @@ env/Lib/site-packages/wcwidth/__pycache__/
 env/Lib/site-packages/wcwidth/tests/__pycache__/
 env/Lib/site-packages/yaml/__pycache__/
 logs/
+requirements.txt
+.gitignore
