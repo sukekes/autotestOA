@@ -5,6 +5,6 @@
 # @Software: PyCharm
 # @Blog    ：https://www.cnblogs.com/xjin/
 
-from selenium import 
+from selenium import
 
 class LoginPage(BasePage):

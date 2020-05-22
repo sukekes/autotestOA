@@ -203,3 +203,4 @@ env/Lib/site-packages/urllib3/util/__pycache__/
 env/Lib/site-packages/wcwidth/__pycache__/
 env/Lib/site-packages/wcwidth/tests/__pycache__/
 env/Lib/site-packages/yaml/__pycache__/
+logs/
