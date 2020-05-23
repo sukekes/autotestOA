@@ -13,25 +13,30 @@ case_name: "login_success"
 
 # 所属用例集用例根据不同模块或页面分成不同的用例子集，每一个用例对应有一个子集，所有子集合并起来是完整的用例集
 # 使用PO模式进行自动化测试时用例子集名称建议与对应的Page名称保持一致
-testsuite: "login"
+testsuite: "loginpage"
 
 # 简要描述用例对应的功能以及预期结果
 case_description: "用户输入正确的账号、密码后成功登录"
 
 # 前置用例,值为前置用例名称；如果没有前置用例则为空。以数组形式显示，如果有多个前置用例就要写多个
 pre_case:
+-
+  "login_pwd_error"
+-
+  "login_user_error"
 
-# 测试步骤，描述操作步骤。使用数组格式便于统计步骤总数
-test_step: 
-- "step1: 打开登录页面"
-- "step2: 清空用户名后输入正确的用户名"
-- "step3: 清空密码后输入对应的用户密码"
-- "step4: 点击登录按钮"
+# 测试步骤，仅列出每一步需要定位的元素以及定位方式。如登陆case中
+# 第一步通过ID定位用户名输入框，第二步通过ID定位密码输入框
+# 第三步通过ID定位按钮，常用的定位方式有id,classname,tag_name,xpath,css等
+test_step:
+  "username": "id"
+  "password": "id"
+  "login_btn": "id"
 
 # 输入参数，多个参数的话则用数组表示
 input_params:
 -
-  # 名称一般与元素名称保持一致
+  # 名称一般与元素名称保持一致,可以是id, classname等
   username: "chen_m2"
 -
   password: "chenm2test"

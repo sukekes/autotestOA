@@ -1,7 +1,7 @@
 import logging
 
 # 设置log默认级别为info
-# logging.basicConfig(filename='./log/'+'log.log', \
+# logging.basicConfig(filename='./logs/'+'logs.logs', \
 # 	format='[%(asctime)s-%(filename)s-%(levelname)s:%(message)s]', level=logging.INFO, \
 # 	filemode='a', datefmt='%Y-%m-%d %I:%M:%S %p')
 
@@ -20,7 +20,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(messa
     datefmt='%Y-%m-%d %H:%M:%S')
 
 # 使用FileHandler输出到文件
-fh = logging.FileHandler("../logs/log.log")
+fh = logging.FileHandler("../logs/logs.logs")
 fh.setLevel(logging.INFO)
 fh.setFormatter(formatter)
 

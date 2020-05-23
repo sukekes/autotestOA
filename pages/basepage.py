@@ -5,7 +5,7 @@
 # @Software: PyCharm
 # @Blog    ：https://www.cnblogs.com/xjin/
 
-from log import logging
+from common.log import logging
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException, NoSuchWindowException,NoSuchElementException
 
