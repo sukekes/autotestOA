@@ -6,6 +6,7 @@
 # @Blog    ：https://www.cnblogs.com/xjin/
 from common.parse import Parse
 from pages.loginpage import LoginPage
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
@@ -29,9 +30,9 @@ def login_by_manager(page, yml):
     expect_loc = str.upper(parse.data["expect_output"]["loc_type"])
     expect_name = parse.data["expect_output"]["name"]
 
-    login = LoginPage()
+    login = LoginPage(parse.data["base_url"])
 
-    login.type_username(*username_loc, username)
+    login.type_username(username_loc, username=username)
 
     # login.type_password(*((eval("By." + password_loc)), password), type_password)
     #

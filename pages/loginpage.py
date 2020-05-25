@@ -6,18 +6,18 @@
 # @Blog    ：https://www.cnblogs.com/xjin/
 import os
 from pages.basepage import BasePage
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
 class LoginPage(BasePage):
-    def __init__(self):
-        self.data = dict()
-        # 获取文件名，文件名要求与testdata中对应的子集名称保持一致
-        self.page = os.path.basename(__file__)[:-3]
+    def __init__(self, base_url):
+        self.driver = webdriver.Chrome()
+        self.open(base_url)
 
     def type_username(self, *username_loc, username):
-        self.find_element(*username_loc).clear()
-        self.find_element(*username_loc).send_keys(username)
+        self.driver.find_element(*username_loc).clear()
+        self.driver.find_element(*username_loc).send_keys(username)
 
     def type_password(self, *password_loc, password):
         self.find_element(*password_loc).clear()

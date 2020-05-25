@@ -7,33 +7,31 @@
 
 from common.log import logging
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException, NoSuchWindowException, NoSuchElementException
 
 
 class BasePage(object):
 
-    element = None
-    elements = None
-    pre_case = False
-
-    def __init__(self, driver):
-        self.base_url = base_url
-        self.driver = driver
+    def __init__(self):
+        self.element = None
+        self.elements = None
+        self.pre_case = False
+        self.base_url = None
+        self.driver = webdriver.Chrome()
         self.timeout = 30
 
     # protected mthod
-    def _open(self):
+    def _open(self, base_url):
         try:
-            self.driver = webdriver.Chrome()
-            self.driver.get(self.base_url)
+            self.driver = webdriver.Chrome("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")
+            self.driver.get(base_url)
             self.driver.implicitly_wait(self.timeout)
             self.driver.current_window_handle
         except (WebDriverException, NoSuchWindowException, NoSuchElementException) as error:
             logging.error(error)
 
-    def open(self):
-        self._open()
+    def open(self, base_url):
+        self._open(base_url)
 
     def find_element(self, *loc):
         try:
@@ -52,11 +50,8 @@ class BasePage(object):
         except NoSuchElementException as error:
             logging.erro(error)
 
-    # def send_keys(self, param):
-    #     try:
-    #         self.location.send_keys(param)
-    #     except NoSuchElementException as error:
-    #         logging.error(error)
-
+if __name__ == "__main__":
+    basepage = BasePage()
+    basepage.open("http://oa.simulate.com:8080/systemcenter/theme/newecidi/loginform.html")
 
 
