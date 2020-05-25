@@ -7,13 +7,15 @@
 
 from common.log import logging
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException, NoSuchWindowException,NoSuchElementException
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import WebDriverException, NoSuchWindowException, NoSuchElementException
 
 
 class BasePage(object):
 
     element = None
     elements = None
+    pre_case = False
 
     def __init__(self, driver):
         self.base_url = base_url
@@ -23,8 +25,9 @@ class BasePage(object):
     # protected mthod
     def _open(self):
         try:
-            self.driver = webdriver.Edge()
+            self.driver = webdriver.Chrome()
             self.driver.get(self.base_url)
+            self.driver.implicitly_wait(self.timeout)
             self.driver.current_window_handle
         except (WebDriverException, NoSuchWindowException, NoSuchElementException) as error:
             logging.error(error)
@@ -43,16 +46,17 @@ class BasePage(object):
     def find_elements(self, *loc):
         try:
             self.elements = self.driver.find_elements(*loc)
+            self.driver.implicitly_wait(self.timeout)
             logging.info("find the element %s succeed." % loc)
             return self.elements
         except NoSuchElementException as error:
             logging.erro(error)
 
-    def send_keys(self, param):
-        try:
-            self.location.send_keys(param)
-        except NoSuchElementException as error:
-            logging.error(error)
+    # def send_keys(self, param):
+    #     try:
+    #         self.location.send_keys(param)
+    #     except NoSuchElementException as error:
+    #         logging.error(error)
 
 
 

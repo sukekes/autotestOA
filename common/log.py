@@ -1,3 +1,4 @@
+import os
 import logging
 
 # 设置log默认级别为info
@@ -11,7 +12,7 @@ import logging
 # Filemode： log打开模式
 # a：代表每次运行程序都继续写log。即不覆盖之前保存的log信息。
 # w：代表每次运行程序都重新写log。即覆盖之前保存的log信息
-
+base_path = os.getcwd()[:os.getcwd().find("autotestOA") + 10]
 
 logger = logging.getLogger()  # 不加名称设置root logger
 logger.setLevel(logging.INFO)
@@ -20,7 +21,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(messa
     datefmt='%Y-%m-%d %H:%M:%S')
 
 # 使用FileHandler输出到文件
-fh = logging.FileHandler("../logs/logs.logs")
+fh = logging.FileHandler(base_path + "/logs/log.log")
 fh.setLevel(logging.INFO)
 fh.setFormatter(formatter)
 

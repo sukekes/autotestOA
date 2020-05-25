@@ -21,25 +21,33 @@ case_description: "用户输入正确的账号、密码后成功登录"
 # 前置用例,值为前置用例名称；如果没有前置用例则为空。以数组形式显示，如果有多个前置用例就要写多个
 pre_case:
 -
-  "login_pwd_error"
+  "name": "login_pwd_error"
+  "suite": "loginpage"
 -
-  "login_user_error"
+  "name": "login_user_error"
+  "suite": "loginpage"
 
 # 测试步骤，仅列出每一步需要定位的元素以及定位方式。如登陆case中
 # 第一步通过ID定位用户名输入框，第二步通过ID定位密码输入框
 # 第三步通过ID定位按钮，常用的定位方式有id,classname,tag_name,xpath,css等
 test_step:
-  "username": "id"
-  "password": "id"
-  "login_btn": "id"
+  -
+    "loc_type": "id"
+    "name": "username"
+  -
+    "loc_type": "id"
+    "name": "password"
+  -
+    "loc_type": "id"
+    "name": "loginbtn"
 
 # 输入参数，多个参数的话则用数组表示
 input_params:
--
   # 名称一般与元素名称保持一致,可以是id, classname等
   username: "chen_m2"
--
   password: "chenm2test"
 
 # value一般为要验证的元素名，定位到页面独有的元素即可代表测试成功，否则失败。
-expect_output: "topmenu"
+expect_output:
+  "loc_type": "class_name"
+  "name": "topnav"
