@@ -6,6 +6,9 @@
 # @Blog    ：https://www.cnblogs.com/xjin/
 import os
 import yaml
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from time import sleep
 
 
 class Parse(object):
@@ -39,13 +42,27 @@ class Parse(object):
                 eval(pre_case["name"])(pre_case["suite"], pre_case["name"])
 
 
-# if __name__ == "__main__":
-#     parse = Parse()
-#
-#     parse.call_pre_case("loginpage", "login_by_manager")
-#
-#     if parse.data['pre_case'] is None:
-#         print(" is None: " + str(parse.data['pre_case']))
-#     else:
-#         print("is not None" + str(parse.data['pre_case']))
+if __name__ == "__main__":
+    parse = Parse()
+
+    parse.yml_parse("personalwork", "personal_work")
+    driver = webdriver.Chrome()
+    driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp#")
+    driver.maximize_window()
+    driver.find_element_by_id("password").send_keys("chenm2test")
+    sleep(3)
+    driver.find_element_by_id("username").send_keys("chen_m2")
+    sleep(3)
+    driver.find_element_by_id("loginbtn").click()
+    sleep(3)
+    print(parse.data['test_step'][0]["loc_type"])
+    driver.find_element(eval("By." + parse.data['test_step'][0]["loc_type"]), parse.data['test_step'][0]["name"]).click()
+    sleep(3)
+
+
+
+    # if parse.data['pre_case'] is None:
+    #     print(" is None: " + str(parse.data['pre_case']))
+    # else:
+    #     print("is not None" + str(parse.data['pre_case']))
 

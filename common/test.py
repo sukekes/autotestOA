@@ -22,5 +22,6 @@ driver.find_element(eval("By.ID"), "username").send_keys("chen_l3")
 driver.find_element(eval("By" + ".ID"), "loginbtn").click()
 sleep(5)
 
+By.PARTIAL_LINK_TEXT
 driver.implicitly_wait(30)
 driver.quit()

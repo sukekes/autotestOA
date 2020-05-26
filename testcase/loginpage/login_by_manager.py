@@ -9,23 +9,39 @@ from pages.loginpage import LoginPage
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+RESULT = False
+NOW_HANDLE = None
+
 
 def login_by_manager(page, yml):
-
+    global RESULT
+    global NOW_HANDLE
     # 解析测试数据，返回dict
     parse = Parse()
     parse.call_pre_case(page, yml)
 
     # 确认用户名输入框定位方式，属性值，输入参数
-    username_loc = ("By." + str.upper(parse.data['test_step'][0]["loc_type"]), parse.data["test_step"][0]["name"])
+    username_loc = (
+        "By." +
+        str.upper(
+            parse.data['test_step'][0]["loc_type"]),
+        parse.data["test_step"][0]["name"])
     username = parse.data["input_params"]["username"]
 
     # 确认密码输入框定位方式，属性值，输入参数
-    password_loc = ("By." + str.upper(parse.data["test_step"][1]["loc_type"]), parse.data["test_step"][1]["name"])
+    password_loc = (
+        "By." +
+        str.upper(
+            parse.data["test_step"][1]["loc_type"]),
+        parse.data["test_step"][1]["name"])
     password = parse.data["input_params"]["password"]
 
     # 确认登录按钮定位方式，属性值
-    btn_loc = ("By." + str.upper(parse.data['test_step'][2]["loc_type"]), parse.data["test_step"][2]["name"])
+    btn_loc = (
+        "By." +
+        str.upper(
+            parse.data['test_step'][2]["loc_type"]),
+        parse.data["test_step"][2]["name"])
 
     # 确认预期结果定位方式、属性值
     expect_loc = "By." + str.upper(parse.data["expect_output"]["loc_type"])
@@ -42,10 +58,12 @@ def login_by_manager(page, yml):
     # 验证能否定位到首页topmu，定位到返回True，反之False
     topmemu = login.find_element(eval(expect_loc), expect_name)
 
+    NOW_HANDLE =
+
     if topmemu is not None:
-        return True
+        RESULT = True
     else:
-        return False
+        RESULT = False
 
 # if __name__ == "__main__":
 #     login_by_manager("loginpage", "login_by_manager")

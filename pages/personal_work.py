@@ -21,3 +21,4 @@ class PersonalWork(BasePage):
 
     def click_form_manager(self, loc_type, attr_name):
         self.find_element(eval(loc_type), attr_name).click()
+

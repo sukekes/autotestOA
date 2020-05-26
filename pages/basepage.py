@@ -17,13 +17,12 @@ class BasePage(object):
         self.elements = None
         self.pre_case = False
         self.base_url = None
-        self.driver = None
+        self.driver = webdriver.Chrome()
         self.timeout = 30
 
     # protected mthod
     def _open(self, base_url):
         try:
-            self.driver = webdriver.Chrome()
             self.driver.get(base_url)
             self.driver.implicitly_wait(self.timeout)
             self.driver.maximize_window()
@@ -35,7 +34,7 @@ class BasePage(object):
 
     def find_element(self, *loc):
         try:
-            self.driver.current_window_handle
+            # self.driver.switch_to.window(now_handle)
             self.driver.implicitly_wait(self.timeout)
             self.element = self.driver.find_element(*loc)
             logging.info("find the element %s success." % str(loc))
@@ -45,7 +44,7 @@ class BasePage(object):
 
     def find_elements(self, *loc):
         try:
-            self.driver.current_window_handle
+            # self.driver.switch_to.window(now_handle)
             self.elements = self.driver.find_elements(*loc)
             self.driver.implicitly_wait(self.timeout)
             logging.info("find the element %s succeed." % loc)
