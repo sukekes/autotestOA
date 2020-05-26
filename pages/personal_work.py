@@ -10,9 +10,8 @@ from selenium.webdriver.common.by import By
 
 
 class PersonalWork(BasePage):
-    def __init__(self, base_url):
+    def __init__(self):
         super().__init__()
-        super().open(base_url)
 
     def click_menu(self, loc_type, attr_name):
         self.find_element(eval(loc_type), attr_name).click()

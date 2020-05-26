@@ -30,7 +30,7 @@ def personal_work(page, yml):
     expect_name = parse.data["expect_output"]["name"]
 
     # 输入用户名、密码
-    person = PersonalWork(parse.data["base_url"])
+    person = PersonalWork()
     person.click_menu(menu_loc[0], menu_loc[1])
     person.click_web_form(webform_loc[0], webform_loc[1])
     person.click_form_manager(webform_manager_loc[0], webform_manager_loc[1])
