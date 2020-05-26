@@ -33,31 +33,37 @@ class Parse(object):
         else:
             return False
 
-    def call_pre_case(self, page, yml):
+    def call_pre_case(self, driver, page, yml):
         has_pre_case = self.is_pre(page, yml)
 
         if has_pre_case:
             for pre_case in self.data['pre_case']:
                 exec("from testcase.%s.%s import %s" % (pre_case["suite"], pre_case["name"], pre_case["name"]))
-                eval(pre_case["name"])(pre_case["suite"], pre_case["name"])
+                eval(pre_case["name"])(driver, pre_case["suite"], pre_case["name"])
 
 
-if __name__ == "__main__":
-    parse = Parse()
-
-    parse.yml_parse("personalwork", "personal_work")
-    driver = webdriver.Chrome()
-    driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp#")
-    driver.maximize_window()
-    driver.find_element_by_id("password").send_keys("chenm2test")
-    sleep(3)
-    driver.find_element_by_id("username").send_keys("chen_m2")
-    sleep(3)
-    driver.find_element_by_id("loginbtn").click()
-    sleep(3)
-    print(parse.data['test_step'][0]["loc_type"])
-    driver.find_element(eval("By." + parse.data['test_step'][0]["loc_type"]), parse.data['test_step'][0]["name"]).click()
-    sleep(3)
+# if __name__ == "__main__":
+#     parse = Parse()
+#
+#     parse.yml_parse("personalwork", "personal_work")
+#     driver = webdriver.Chrome()
+#     driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp#")
+#     driver.maximize_window()
+#     driver.implicitly_wait(30)
+#     driver.find_element_by_id("password").send_keys("chenm2test")
+#     driver.find_element_by_id("username").send_keys("chen_m2")
+#     driver.find_element_by_id("loginbtn").click()
+#
+#     driver.find_element(By.XPATH, "//*[@data-id='2']").click()
+#     driver.find_element(By.XPATH, "//*[@id='14$cell$1']/div/div/span/span[2]").click()
+#     driver.find_element(By.XPATH, "//*[@id='35$cell$1']/div/div/span[3]/span[2]").click()
+#
+#     if driver.find_element(By.XPATH, "//*[@class='mini-tab-text']"):
+#         driver.quit()
+#         print("success")
+    # print(str.upper(parse.data['test_step'][0]["loc_type"]))
+    # driver.find_element(eval("By." + str.upper(parse.data['test_step'][0]["loc_type"])),
+    #                     parse.data['test_step'][0]["name"]).click()
 
 
 

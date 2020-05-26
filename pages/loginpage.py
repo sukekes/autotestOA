@@ -12,9 +12,9 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage(BasePage):
-    def __init__(self, base_url):
-        super().__init__()
-        super().open(base_url)
+    # def __init__(self, base_url):
+    #     super().__init__()
+    #     self.base_url = base_url
 
     def type_username(self, loc_type, attr_name, username):
         # self.driver.find_element(username_loc).clear()

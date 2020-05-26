@@ -12,25 +12,25 @@ from selenium.common.exceptions import WebDriverException, NoSuchWindowException
 
 
 class BasePage(object):
-    def __init__(self):
+    def __init__(self, driver):
         self.element = None
         self.elements = None
         self.pre_case = False
-        self.base_url = None
-        self.driver = webdriver.Chrome()
+        self.base_url = "http://oa.simulate.com:8080/systemcenter/theme/newecidi/loginform.html"
+        self.driver = driver
         self.timeout = 30
 
     # protected mthod
-    def _open(self, base_url):
+    def _open(self):
         try:
-            self.driver.get(base_url)
+            self.driver.get(self.base_url)
             self.driver.implicitly_wait(self.timeout)
             self.driver.maximize_window()
         except (WebDriverException, NoSuchWindowException, NoSuchElementException) as error:
             logging.error(error)
 
-    def open(self, base_url):
-        self._open(base_url)
+    def open(self):
+        self._open()
 
     def find_element(self, *loc):
         try:
@@ -40,7 +40,7 @@ class BasePage(object):
             logging.info("find the element %s success." % str(loc))
             return self.element
         except NoSuchElementException as error:
-            logging.erro(error)
+            logging.error(error)
 
     def find_elements(self, *loc):
         try:
@@ -52,8 +52,6 @@ class BasePage(object):
         except NoSuchElementException as error:
             logging.erro(error)
 
-    def driver_quit(self):
-        self.driver.quit()
 
 
 # if __name__ == "__main__":

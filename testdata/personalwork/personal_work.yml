@@ -30,19 +30,20 @@ pre_case:
 # 第三步通过ID定位按钮，常用的定位方式有id,classname,tag_name,xpath,css等
 test_step:
   -
-    "loc_type": "PARTIAL_LINK_TEXT"
-    "name": "个人办公"
+    "loc_type": "xpath"
+    "name": "//*[@data-id='2']"
   -
-    "loc_type": "PARTIAL_LINK_TEXT"
-    "name": "网上表单"
+    "loc_type": "xpath"
+    "name": "//*[@id='14$cell$1']/div/div/span/span[2]"
   -
-    "loc_type": "PARTIAL_LINK_TEXT"
-    "name": "新_表单管理"
+    "loc_type": "xpath"
+    "name": "//*[@id='35$cell$1']/div/div/span[3]/span[2]"
+
 
 # 输入参数，多个参数的话则用数组表示
 input_params:
 
 # value一般为要验证的元素名，定位到页面独有的元素即可代表测试成功，否则失败。
 expect_output:
-  "loc_type": "PARTIAL_LINK_TEXT"
-  "name": "表单填写"
+  "loc_type": "xpath"
+  "name": "//*[@class='mini-tab-text']"

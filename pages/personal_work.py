@@ -5,13 +5,14 @@
 # @Software: PyCharm
 # @Blog    ：https://www.cnblogs.com/xjin/
 from pages.basepage import BasePage
+from pages.loginpage import LoginPage
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
 class PersonalWork(BasePage):
-    def __init__(self):
-        super().__init__()
+    # def __init__(self):
+    #     LoginPage.__init__()
 
     def click_menu(self, loc_type, attr_name):
         self.find_element(eval(loc_type), attr_name).click()

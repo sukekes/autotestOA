@@ -5,11 +5,13 @@
 # @Software: PyCharm
 # @Blog    ：https://www.cnblogs.com/xjin/
 import pytest
+from selenium import webdriver
 from testcase.loginpage.login_by_manager import login_by_manager, RESULT
 
 
 @pytest.mark.tasks
 def test_login_by_manager():
-    login_by_manager("loginpage", "login_by_manager")
+    driver = webdriver.Chrome()
+    login_by_manager(driver, "loginpage", "login_by_manager")
 
     assert RESULT

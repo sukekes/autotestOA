@@ -13,12 +13,14 @@ RESULT = False
 NOW_HANDLE = None
 
 
-def login_by_manager(page, yml):
+def login_by_manager(driver, page, yml):
     global RESULT
     global NOW_HANDLE
     # 解析测试数据，返回dict
     parse = Parse()
-    parse.call_pre_case(page, yml)
+    login = LoginPage(driver)
+    parse.call_pre_case(driver, page, yml)
+
 
     # 确认用户名输入框定位方式，属性值，输入参数
     username_loc = (
@@ -48,7 +50,7 @@ def login_by_manager(page, yml):
     expect_name = parse.data["expect_output"]["name"]
 
     # 输入用户名、密码
-    login = LoginPage(parse.data["base_url"])
+    login.open()
     login.type_password(password_loc[0], password_loc[1], password)
     login.type_username(username_loc[0], username_loc[1], username)
 
@@ -57,8 +59,6 @@ def login_by_manager(page, yml):
 
     # 验证能否定位到首页topmu，定位到返回True，反之False
     topmemu = login.find_element(eval(expect_loc), expect_name)
-
-    NOW_HANDLE =
 
     if topmemu is not None:
         RESULT = True
