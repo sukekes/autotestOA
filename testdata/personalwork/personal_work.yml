@@ -1,0 +1,48 @@
+# 以下所提的元素名可以是元素id，classname或者其他能定位该元素的属性名称
+# 用例颗粒度说明，一条用例只在一个页面操作，以OA为例，如进入个人办公--网上表单--表单填写页面，则登录页面一条case
+# 主页一条case，个人办公左侧树一条case，表单填写页面一条case。即进入表单填写页面一共对应4条case
+project_name: "院综合管理信息系统"
+
+# 项目主页地址，一般而言登录页面是所有用例的前置用例，base_url为登录url即可
+base_url: "http://oa.simulate.com:8080/systemcenter/theme/newecidi/loginform.html"
+
+# 用例编号
+case_num: "testsuite_002"
+
+# 一般要求与文件名保持一致
+case_name: "personal_work"
+
+# 所属用例集用例根据不同模块或页面分成不同的用例子集，每一个用例对应有一个子集，所有子集合并起来是完整的用例集
+# 使用PO模式进行自动化测试时用例子集名称建议与对应的Page名称保持一致
+testsuite: "personalwork"
+
+# 简要描述用例对应的功能以及预期结果
+case_description: "进入个人办公，网上表单填写页面"
+
+# 前置用例,值为前置用例名称；如果没有前置用例则为空。以数组形式显示，如果有多个前置用例就要写多个
+pre_case:
+-
+  "name": "login_by_manager"
+  "suite": "loginpage"
+
+# 测试步骤，仅列出每一步需要定位的元素以及定位方式。如登陆case中
+# 第一步通过ID定位用户名输入框，第二步通过ID定位密码输入框
+# 第三步通过ID定位按钮，常用的定位方式有id,classname,tag_name,xpath,css等
+test_step:
+  -
+    "loc_type": "PARTIAL_LINK_TEXT"
+    "name": "个人办公"
+  -
+    "loc_type": "PARTIAL_LINK_TEXT"
+    "name": "网上表单"
+  -
+    "loc_type": "PARTIAL_LINK_TEXT"
+    "name": "新_表单管理"
+
+# 输入参数，多个参数的话则用数组表示
+input_params:
+
+# value一般为要验证的元素名，定位到页面独有的元素即可代表测试成功，否则失败。
+expect_output:
+  "loc_type": "PARTIAL_LINK_TEXT"
+  "name": "表单填写"
