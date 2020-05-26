@@ -4,3 +4,10 @@
 # @FileName: run.py
 # @Software: PyCharm
 # @Blog    ：https://www.cnblogs.com/xjin/
+
+import pytest
+from pytestreport import TestRunner
+
+
+if __name__ == "__main__":
+    pytest.main(["-m", "tasks", "--pytest_report", "../testreport/report.html"])

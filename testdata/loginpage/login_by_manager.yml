@@ -20,12 +20,6 @@ case_description: "用户输入正确的账号、密码后成功登录"
 
 # 前置用例,值为前置用例名称；如果没有前置用例则为空。以数组形式显示，如果有多个前置用例就要写多个
 pre_case:
--
-  "name": "login_pwd_error"
-  "suite": "loginpage"
--
-  "name": "login_user_error"
-  "suite": "loginpage"
 
 # 测试步骤，仅列出每一步需要定位的元素以及定位方式。如登陆case中
 # 第一步通过ID定位用户名输入框，第二步通过ID定位密码输入框
@@ -50,4 +44,4 @@ input_params:
 # value一般为要验证的元素名，定位到页面独有的元素即可代表测试成功，否则失败。
 expect_output:
   "loc_type": "class_name"
-  "name": "topnav"
+  "name": "mini-tab-text"

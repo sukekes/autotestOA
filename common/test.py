@@ -6,13 +6,21 @@
 # @Blog    ：https://www.cnblogs.com/xjin/
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from time import sleep
 
 driver = webdriver.Chrome()
-driver.get("https://www.baidu.com")
+driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/loginform.html")
 driver.maximize_window()
-a = eval(("By" + ".ID"), "kw")
 
-driver.find_element(a.send_keys("123"))
-driver.find_element(eval("By" + ".ID"), "su").click()
+
+
+sleep(3)
+driver.find_element(eval("By" + ".ID"), "password").clear()
+driver.find_element(eval("By" + ".ID"), "password").send_keys("chenl3test")
+sleep(5)
+driver.find_element(eval("By.ID"), "username").send_keys("chen_l3")
+driver.find_element(eval("By" + ".ID"), "loginbtn").click()
+sleep(5)
 
 driver.implicitly_wait(30)
+driver.quit()

@@ -33,17 +33,19 @@ class Parse(object):
     def call_pre_case(self, page, yml):
         has_pre_case = self.is_pre(page, yml)
 
-        if has_pre_case is not None:
+        if has_pre_case:
             for pre_case in self.data['pre_case']:
                 exec("from testcase.%s.%s import %s" % (pre_case["suite"], pre_case["name"], pre_case["name"]))
-                eval(pre_case["name"])()
+                eval(pre_case["name"])(pre_case["suite"], pre_case["name"])
 
 
-if __name__ == "__main__":
-    parse = Parse()
-
-    parse.call_pre_case("loginpage", "login_by_manager")
-
-    print(str.upper(parse.data['test_step'][0]["loc_type"]))
-    print()
+# if __name__ == "__main__":
+#     parse = Parse()
+#
+#     parse.call_pre_case("loginpage", "login_by_manager")
+#
+#     if parse.data['pre_case'] is None:
+#         print(" is None: " + str(parse.data['pre_case']))
+#     else:
+#         print("is not None" + str(parse.data['pre_case']))
 

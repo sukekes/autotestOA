@@ -6,14 +6,15 @@
 # @Blog    ：https://www.cnblogs.com/xjin/
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 from time import sleep
 from selenium.webdriver.remote.webelement import WebElement
 
 
 # 家里电脑找不到Chromedriver路径，加上路径，Chrome非默认路径安装的问题？？？
-driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
+driver = webdriver.Chrome()
 
-driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp#")
+driver.get("http://oa.simulate.com:8080/systemcenter/theme/newecidi/index.jsp")
 
 driver.maximize_window()
 
@@ -23,9 +24,21 @@ driver.maximize_window()
 # driver.find_element_by_id("username").send_keys("chen_m2")
 # driver.find_element_by_id("username").send_keys(Keys.TAB)
 # driver.implicitly_wait(30)
-a = driver.find_element_by_id("username")
+driver.find_element_by_id("username").send_keys("chen_m2")
+driver.find_element_by_id("password").send_keys("chenm2test")
+driver.find_element_by_id("loginbtn").click()
+driver.implicitly_wait(20)
 
-print(a.id)
+# driver.find_element_by_partial_link_text("我的任务").click()
+# driver.find_element_by_partial_link_text("论文专著").click()
+# driver.find_element_by_partial_link_text("我的用例").click()
+
+driver.find_element_by_partial_link_text("个人办公").click()
+By.PARTIAL_LINK_TEXT
+
+
+sleep(3)
+
 
 # print(type(a))
 # print(help(WebElement))

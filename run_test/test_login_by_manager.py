@@ -4,3 +4,12 @@
 # @FileName: test_login_by_manager.py
 # @Software: PyCharm
 # @Blog    ：https://www.cnblogs.com/xjin/
+import pytest
+from testcase.loginpage.login_by_manager import login_by_manager
+
+
+@pytest.mark.tasks
+def test_login_by_manager():
+    expect = login_by_manager("loginpage", "login_by_manager")
+
+    assert expect

@@ -11,35 +11,41 @@ from selenium.webdriver.common.by import By
 
 
 def login_by_manager(page, yml):
-    parse = Parse()
 
+    # 解析测试数据，返回dict
+    parse = Parse()
     parse.call_pre_case(page, yml)
 
-    # 用户名定位方式，name,要输入的数据
-    username_loc = (eval("By." + str.upper(parse.data['test_step'][0]["loc_type"])), parse.data["test_step"][0]["name"])
+    # 确认用户名输入框定位方式，属性值，输入参数
+    username_loc = ("By." + str.upper(parse.data['test_step'][0]["loc_type"]), parse.data["test_step"][0]["name"])
     username = parse.data["input_params"]["username"]
 
-    # 密码定位方式，name,要输入的数据
-    password_loc = (eval("By." + str.upper(parse.data["test_step"][1]["loc_type"])), parse.data["test_step"][1]["name"])
-    password = parse.data["input_params"]["username"]
+    # 确认密码输入框定位方式，属性值，输入参数
+    password_loc = ("By." + str.upper(parse.data["test_step"][1]["loc_type"]), parse.data["test_step"][1]["name"])
+    password = parse.data["input_params"]["password"]
 
-    # 登录按钮的定位方式，name
+    # 确认登录按钮定位方式，属性值
     btn_loc = ("By." + str.upper(parse.data['test_step'][2]["loc_type"]), parse.data["test_step"][2]["name"])
 
-    # 预期结果的定位方式、name
-    expect_loc = str.upper(parse.data["expect_output"]["loc_type"])
+    # 确认预期结果定位方式、属性值
+    expect_loc = "By." + str.upper(parse.data["expect_output"]["loc_type"])
     expect_name = parse.data["expect_output"]["name"]
 
+    # 输入用户名、密码
     login = LoginPage(parse.data["base_url"])
+    login.type_password(password_loc[0], password_loc[1], password)
+    login.type_username(username_loc[0], username_loc[1], username)
 
-    login.type_username(username_loc, username=username)
+    # 登录
+    login.submit(btn_loc[0], btn_loc[1])
 
-    # login.type_password(*((eval("By." + password_loc)), password), type_password)
-    #
-    # login.login((eval("By." + btn_loc), btn))
-    #
-    # login.find_element((eval("By." + expect_loc), expect_name))
+    # 验证能否定位到首页topmu，定位到返回True，反之False
+    topmemu = login.find_element(eval(expect_loc), expect_name)
 
+    if topmemu is not None:
+        return True
+    else:
+        return False
 
-if __name__ == "__main__":
-    login_by_manager("loginpage", "login_by_manager")
+# if __name__ == "__main__":
+#     login_by_manager("loginpage", "login_by_manager")
