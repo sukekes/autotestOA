@@ -45,3 +45,6 @@ import pytest
 if __name__ == "__main__":
     pytest.main(["-m", "tasks", "--pytest_report", "../testreport/report.html"])
 ```
+
+## 待完善部分
+    邮件发送测试报告
