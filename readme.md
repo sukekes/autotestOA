@@ -1,5 +1,5 @@
 # UI 自动化测试PageObject 实例
-###内网OA模拟环境
+##内网OA模拟环境
 
 ## requirement
 ### UI自动化测试框架：[Selenium v3.141.0](https://selenium-python.readthedocs.io/)
@@ -28,22 +28,14 @@
 - testreport
     - report.html # 测试报告
 
-
-
-
-
 ## 测试用例编写要求
-### [login_by_manager](./testdata/loginpage/login_by_manager.py)
-### [personal_work](./testdata/personalwork/personal_work.py)
-
-
+### [login_by_manager](https://github.com/sukekes/autotestOA/blob/master/testdata/loginpage/login_by_manager.yml)
+### [personal_work](https://github.com/sukekes/autotestOA/blob/master/testdata/personalwork/personal_work.yml)
 
 
 ## 执行测试脚本
 '''
 import pytest
-
-
 if __name__ == "__main__":
     pytest.main(["-m", "tasks", "--pytest_report", "../testreport/report.html"])
 '''
