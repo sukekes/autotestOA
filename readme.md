@@ -10,25 +10,29 @@
 
 
 ## 代码结构
-- common
-    - log.py #日志输出
-    - parse.py # 解析测试数据
-- logs
-    - log.log # 日志
-- pages
-    - basepage.py     # 所有页面的父类，主要定义元素定位方法
-    - ***.py          # 子类页面，主要定义测试方法，如登录页面输入用户名、输入密码，点击登录按钮
-- testcase
-    - dirname/xxx.py  # 描述测试业务逻辑，如调用前置用例，调动方法前后顺序
+-   common
+    -   log.py #日志输出
+    -   parse.py # 解析测试数据
+-   logs
+    -   log.log # 日志
+-   pages
+    -   basepage.py     # 所有页面的父类，主要定义元素定位方法
+    -   ***.py          # 子类页面，主要定义测试方法，如登录页面输入用户名、输入密码，点击登录按钮
+-   run_test
+    -   run.py          # 执行测试方法
+    -   test_xxx.py     # 测试方法
+-   testcase
+    -   dirname/xxx.py  # 描述测试业务逻辑，如调用前置用例，调动方法前后顺序
     
-- testdata
-    - dirname/xxx.yml # 测试用例，主要内容为前置用例、测试步骤、预期结果
-- testdata_excel
-    - xxx.xlsx # Excel维护的测试用例，预留内容，尚未实现
-- testreport
-    - report.html # 测试报告
+-   testdata
+    -   dirname/xxx.yml # 测试用例，主要内容为前置用例、测试步骤、预期结果
+-   testdata_excel
+    -   xxx.xlsx        # Excel维护的测试用例，预留内容，尚未实现
+-   testreport
+    -   report.html     # 测试报告
 
-## 测试用例编写要求
+## 测试用例编写模板
+### [Yaml语法](https://www.runoob.com/w3cnote/yaml-intro.html)
 ### [login_by_manager](https://github.com/sukekes/autotestOA/blob/master/testdata/loginpage/login_by_manager.yml)
 ### [personal_work](https://github.com/sukekes/autotestOA/blob/master/testdata/personalwork/personal_work.yml)
 
