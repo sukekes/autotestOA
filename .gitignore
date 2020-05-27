@@ -116,5 +116,3 @@ venv.bak/
 .gitignore
 .idea/
 common/__pycache__/
-logs/
-testreport/

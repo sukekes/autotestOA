@@ -11,8 +11,6 @@ from selenium.webdriver.common.by import By
 
 
 def login_by_manager(driver, page, yml):
-    global RESULT
-    global NOW_HANDLE
     # 解析测试数据，返回dict
     parse = Parse()
     login = LoginPage(driver)
