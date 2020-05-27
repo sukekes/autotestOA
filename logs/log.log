@@ -422,3 +422,14 @@ from chrome not reachable
 2020-05-27 10:32:48 - root - INFO: - find the element ('xpath', "//*[@id='14$cell$1']/div/div/span/span[2]") success.
 2020-05-27 10:32:48 - root - INFO: - find the element ('xpath', "//*[@id='35$cell$1']/div/div/span[3]/span[2]") success.
 2020-05-27 10:32:51 - root - INFO: - find the element ('xpath', "//*[@class='mini-tab-text']") success.
+2020-05-27 17:58:28 - root - INFO: - find the element ('id', 'password') success.
+2020-05-27 17:58:28 - root - INFO: - find the element ('id', 'username') success.
+2020-05-27 17:58:29 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-27 17:58:30 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-27 17:58:36 - root - INFO: - find the element ('id', 'password') success.
+2020-05-27 17:58:36 - root - INFO: - find the element ('id', 'username') success.
+2020-05-27 17:58:36 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-27 17:58:38 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-27 17:58:39 - root - INFO: - find the element ('xpath', "//*[@data-id='2']") success.
+2020-05-27 17:58:40 - root - INFO: - find the element ('xpath', "//*[@id='14$cell$1']/div/div/span/span[2]") success.
+2020-05-27 17:58:40 - root - INFO: - find the element ('xpath', "//*[@id='35$cell$1']/div/div/span[3]/span[2]") success.

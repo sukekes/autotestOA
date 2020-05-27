@@ -54,13 +54,17 @@ class Parse(object):
 #     driver.find_element_by_id("username").send_keys("chen_m2")
 #     driver.find_element_by_id("loginbtn").click()
 #
-#     driver.find_element(By.XPATH, "//*[@data-id='2']").click()
-#     driver.find_element(By.XPATH, "//*[@id='14$cell$1']/div/div/span/span[2]").click()
-#     driver.find_element(By.XPATH, "//*[@id='35$cell$1']/div/div/span[3]/span[2]").click()
-#
-#     if driver.find_element(By.XPATH, "//*[@class='mini-tab-text']"):
-#         driver.quit()
-#         print("success")
+#     # //*[@data-id='2']
+#     driver.find_element(By.XPATH, "//a[em='个人办公']").click()
+#     # //*[@id='14$cell$1']/div/div/span/span[2]
+#     driver.find_element(By.XPATH, "//span[span='网上表单']").click()
+#     # //*[@id='35$cell$1']/div/div/span[3]/span[2]
+#     sleep(3)
+#     driver.find_element(By.XPATH, "//div[span='新_表单管理']").click()
+
+    # if driver.find_element(By.XPATH, "//*[@class='mini-tab-text']"):
+    #     driver.quit()
+    #     print("success")
     # print(str.upper(parse.data['test_step'][0]["loc_type"]))
     # driver.find_element(eval("By." + str.upper(parse.data['test_step'][0]["loc_type"])),
     #                     parse.data['test_step'][0]["name"]).click()

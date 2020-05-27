@@ -37,6 +37,7 @@ class BasePage(object):
             # self.driver.switch_to.window(now_handle)
             self.driver.implicitly_wait(self.timeout)
             self.element = self.driver.find_element(*loc)
+            sleep(2)
             logging.info("find the element %s success." % str(loc))
             return self.element
         except NoSuchElementException as error:
@@ -46,6 +47,7 @@ class BasePage(object):
         try:
             # self.driver.switch_to.window(now_handle)
             self.elements = self.driver.find_elements(*loc)
+            sleep(2)
             self.driver.implicitly_wait(self.timeout)
             logging.info("find the element %s succeed." % loc)
             return self.elements

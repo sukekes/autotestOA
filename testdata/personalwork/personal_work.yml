@@ -31,13 +31,13 @@ pre_case:
 test_step:
   -
     "loc_type": "xpath"
-    "name": "//*[@data-id='2']"
+    "name": "//a[em='个人办公']"
   -
     "loc_type": "xpath"
-    "name": "//*[@id='14$cell$1']/div/div/span/span[2]"
+    "name": "//span[span='网上表单']"
   -
     "loc_type": "xpath"
-    "name": "//*[@id='35$cell$1']/div/div/span[3]/span[2]"
+    "name": "//div[span='新_表单管理']"
 
 
 # 输入参数，多个参数的话则用数组表示
