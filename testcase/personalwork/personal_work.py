@@ -47,10 +47,8 @@ def personal_work(driver, page, yml):
 
     # 验证能否定位到首页form_type，定位到返回True，反之False
     form_type = person.find_element(eval(expect_loc), expect_name)
-    if form_type is not None:
-        return True
-    else:
-        return False
+
+    return form_type
 
 
 if __name__ == "__main__":

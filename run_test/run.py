@@ -8,4 +8,4 @@
 import pytest
 
 if __name__ == "__main__":
-    pytest.main(["-m",  "tasks",  "--pytest_report",  "../testreport/report.html"])
+    pytest.main(["-m", "tasks", "--pytest_report", "../testreport/report.html"])

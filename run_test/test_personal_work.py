@@ -14,3 +14,4 @@ def test_personal_work():
     driver = webdriver.Chrome()
     expect = personal_work(driver, "personalwork", "personal_work")
     assert expect
+    driver.quit()

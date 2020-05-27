@@ -6,12 +6,13 @@
 # @Blog    ：https://www.cnblogs.com/xjin/
 import pytest
 from selenium import webdriver
-from testcase.loginpage.login_by_manager import login_by_manager, RESULT
+from testcase.loginpage.login_by_manager import login_by_manager
 
 
 @pytest.mark.tasks
 def test_login_by_manager():
     driver = webdriver.Chrome()
-    login_by_manager(driver, "loginpage", "login_by_manager")
+    expect = login_by_manager(driver, "loginpage", "login_by_manager")
 
-    assert RESULT
+    assert expect
+    driver.quit()

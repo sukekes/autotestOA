@@ -9,9 +9,6 @@ from pages.loginpage import LoginPage
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-RESULT = False
-NOW_HANDLE = None
-
 
 def login_by_manager(driver, page, yml):
     global RESULT
@@ -60,10 +57,7 @@ def login_by_manager(driver, page, yml):
     # 验证能否定位到首页topmu，定位到返回True，反之False
     topmemu = login.find_element(eval(expect_loc), expect_name)
 
-    if topmemu is not None:
-        RESULT = True
-    else:
-        RESULT = False
+    return topmemu
 
 # if __name__ == "__main__":
 #     login_by_manager("loginpage", "login_by_manager")
