@@ -3,9 +3,21 @@
 
 ## requirement
 ### UI自动化测试框架：[Selenium v3.141.0](https://selenium-python.readthedocs.io/)
+```python
+pip install selenium
+```
 ### 单元测试框架： [pytest v5.4.2](https://learning-pytest.readthedocs.io/zh/latest/index.html)
+```python
+pip install pytest
+```
 ### 报告模板 ：[PyTestReport v0.2.1](https://github.com/five3/PyTestReport)
+```python
+pip install PyTestReport
+```
 ### 用例解析 ：[PyYaml v5.3.1](https://pyyaml.org/wiki/PyYAMLDocumentation)
+```python
+pip install pyyaml
+```
 ### 浏览器驱动： [ChromeDriver](https://chromedriver.chromium.org/downloads)
 
 

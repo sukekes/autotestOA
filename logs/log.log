@@ -433,3 +433,39 @@ from chrome not reachable
 2020-05-27 17:58:39 - root - INFO: - find the element ('xpath', "//*[@data-id='2']") success.
 2020-05-27 17:58:40 - root - INFO: - find the element ('xpath', "//*[@id='14$cell$1']/div/div/span/span[2]") success.
 2020-05-27 17:58:40 - root - INFO: - find the element ('xpath', "//*[@id='35$cell$1']/div/div/span[3]/span[2]") success.
+2020-05-28 08:51:06 - root - INFO: - find the element ('id', 'password') success.
+2020-05-28 08:51:08 - root - INFO: - find the element ('id', 'username') success.
+2020-05-28 08:51:10 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-28 08:51:13 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-28 08:51:21 - root - INFO: - find the element ('id', 'password') success.
+2020-05-28 08:51:23 - root - INFO: - find the element ('id', 'username') success.
+2020-05-28 08:51:25 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-28 08:51:29 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-28 08:51:31 - root - INFO: - find the element ('xpath', "//a[em='个人办公']") success.
+2020-05-28 08:51:33 - root - INFO: - find the element ('xpath', "//span[span='网上表单']") success.
+2020-05-28 08:51:35 - root - INFO: - find the element ('xpath', "//div[span='新_表单管理']") success.
+2020-05-28 08:51:37 - root - INFO: - find the element ('xpath', "//*[@class='mini-tab-text']") success.
+2020-05-28 09:26:58 - root - INFO: - find the element ('id', 'password') success.
+2020-05-28 09:27:00 - root - INFO: - find the element ('id', 'username') success.
+2020-05-28 09:27:02 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-28 09:27:05 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-28 09:27:12 - root - INFO: - find the element ('id', 'password') success.
+2020-05-28 09:27:15 - root - INFO: - find the element ('id', 'username') success.
+2020-05-28 09:27:17 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-28 09:27:19 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-28 09:27:21 - root - INFO: - find the element ('xpath', "//a[em='个人办公']") success.
+2020-05-28 09:27:24 - root - INFO: - find the element ('xpath', "//span[span='网上表单']") success.
+2020-05-28 09:27:26 - root - INFO: - find the element ('xpath', "//div[span='新_表单管理']") success.
+2020-05-28 09:27:29 - root - INFO: - find the element ('xpath', "//*[@class='mini-tab-text']") success.
+2020-05-28 14:29:44 - root - INFO: - find the element ('id', 'password') success.
+2020-05-28 14:29:46 - root - INFO: - find the element ('id', 'username') success.
+2020-05-28 14:29:48 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-28 14:29:52 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-28 14:29:59 - root - INFO: - find the element ('id', 'password') success.
+2020-05-28 14:30:01 - root - INFO: - find the element ('id', 'username') success.
+2020-05-28 14:30:03 - root - INFO: - find the element ('id', 'loginbtn') success.
+2020-05-28 14:30:07 - root - INFO: - find the element ('class name', 'mini-tab-text') success.
+2020-05-28 14:30:09 - root - INFO: - find the element ('xpath', "//a[em='个人办公']") success.
+2020-05-28 14:30:11 - root - INFO: - find the element ('xpath', "//span[span='网上表单']") success.
+2020-05-28 14:30:13 - root - INFO: - find the element ('xpath', "//div[span='新_表单管理']") success.
+2020-05-28 14:30:17 - root - INFO: - find the element ('xpath', "//*[@class='mini-tab-text']") success.
