@@ -2,7 +2,6 @@
 ## 内网OA模拟环境
 
 ## 开发环境
-### Python3.5+
 ### UI自动化测试框架：[Selenium v3.141.0](https://selenium-python.readthedocs.io/)
 ```shell
 pip install selenium
