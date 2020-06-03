@@ -4,7 +4,7 @@
 project_name: "xxxxx项目"
 
 # 项目主页地址，一般而言登录页面是所有用例的前置用例，base_url为登录url即可
-base_url: "http://oa.simulate.com:8080/systemcenter/theme/newecidi/loginform.html"
+base_url: "需要改成要测试的项目url"
 
 case_num: "testsuite_001"
 
@@ -38,8 +38,8 @@ test_step:
 # 输入参数，多个参数的话则用数组表示
 input_params:
   # 名称一般与元素名称保持一致,可以是id, classname等
-  username: "chen_m2"
-  password: "chenm2test"
+  username: "用户名"
+  password: "密码"
 
 # value一般为要验证的元素名，定位到页面独有的元素即可代表测试成功，否则失败。
 expect_output:
